@@ -180,6 +180,7 @@ int open_gadget() {
 		"lh740x_udc",
 		"atmel_usba_udc",
 		"musb-hdrc",
+		"sw_usb_udc",
 		NULL
 	};
 
@@ -241,6 +242,6 @@ int open_endpoint(__u8 epAddress) {
 	}
 
 	char path[256];
-	sprintf(path, "%s/ep%d%s", gadgetfs_path, number,direction);
+	sprintf(path, "%s/ep%d-bulk", gadgetfs_path, number);
 	return open(path, O_CLOEXEC | O_RDWR);
 }
