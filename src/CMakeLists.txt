@@ -12,9 +12,9 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 set(INSTALL_DEFAULT_BINDIR "bin" CACHE STRING "Appended to CMAKE_INSTALL_PREFIX")
 
 # Comment the following out for releases.
-set(CMAKE_C_FLAGS "$ENV{CFLAGS} -fno-stack-protector")
+set(CMAKE_C_FLAGS "$ENV{CFLAGS}")
 
-set(CMAKE_CPP_FLAGS "${CMAKE_CPP_FLAGS} $ENV{CPPFLAGS} -std=gnu++0x -pedantic -felide-constructors -fno-exceptions -fno-stack-protector")
+set(CMAKE_CPP_FLAGS "${CMAKE_CPP_FLAGS} $ENV{CPPFLAGS} -std=gnu++0x -pedantic -felide-constructors -fno-exceptions")
 
 add_subdirectory(lib)
 add_subdirectory(Plugins)
